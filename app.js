@@ -34,9 +34,9 @@ app.use("/api/v1", router);
 
 // app.use(errorHandle);
 
-app.listen((err) => {
+app.listen(process.env.PORT, (err) => {
   if (err) {
     console.log(`cannot start server by ${err}`);
   }
-  console.log(`Server is running`);
+  console.log(`Server is running at http://localhost:${process.env.PORT}`);
 });
