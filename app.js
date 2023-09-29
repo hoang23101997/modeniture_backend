@@ -20,16 +20,8 @@ const app = express();
 // };
 connectToDB();
 app.use(express.json());
-app.use(
-  cors({
-    origin: "https://modeniture.onrender.com",
-    headers: {
-      "Access-Control-Allow-Origin": "https://modeniture.onrender.com",
-      "Access-Control-Allow-Credentials": true,
-    },
-  })
-);
-app.options("*", cors());
+
+app.use(cors("*"));
 app.use("/api/v1", router);
 
 // app.use(errorHandle);
